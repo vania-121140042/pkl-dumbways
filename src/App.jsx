@@ -1,6 +1,10 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import Login from './features/login/components/login'
+import OrderConfirmation from './features/Order/OrderConfirmation'
+import Basket from './features/basket/components/basket'
+import Menu from './features/Menu/Menu'
 
 
 function App() {
@@ -8,7 +12,7 @@ function App() {
 
   return (
     
-      <p className='text-6xl'>test</p>
+      <Menu/>
   
   )
 }
