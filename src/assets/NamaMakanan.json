@@ -1,0 +1,18 @@
+[
+    {
+        "title" : "ayam",
+        "price" : 2000  
+    },
+    {
+        "title" : "sapi",
+        "price" : 30000  
+    },
+    {
+        "title" : "burung",
+        "price" : 15000  
+    },
+    {
+        "title" : "kambing",
+        "price" : 25000  
+    }
+]
