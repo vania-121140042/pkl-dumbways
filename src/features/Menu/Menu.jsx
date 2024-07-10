@@ -1,6 +1,7 @@
 import ProductCard from "./ProductCard";
-
-const products = [{title : "ayam", price : 10000}, {title : "sapi", price : 10000},{title : "burung", price : 10000}]
+import products from "../../assets/NamaMakanan.json"
+import KategoriCard from "./KategoriCard";
+import kategori from "../../assets/NamaKategori.json"
 
 const Menu = () => { 
     return (
@@ -75,76 +76,10 @@ const Menu = () => {
             {/*Kategori Menu */}
             <div className="flex overflow-x-auto overflow-hidden no-scrollbar mt-8">
               <div className="flex flex-nowrap justify-between gap-5 w-full">
-                <button className="flex flex-col items-center flex-shrink-0">
-                  <img
-                    src="\src\assets\good.png"
-                    alt="For You"
-                    class="w-10 h-10 mb-1"
-                  />
-                  <span className="text-sm relative text-gray-600 hover:text-yellow-500 hover-underline transition duration-300">
-                    For You
-                  </span>
-                </button>
-                <button className="flex flex-col items-center flex-shrink-0">
-                  <img
-                    src="\src\assets\sandwich.png"
-                    alt="Sandwich"
-                    class="w-10 h-10 mb-1"
-                  />
-                  <span className="text-sm text-gray-600 hover:text-yellow-500 hover-underline transition duration-300">
-                    Sandwich
-                  </span>
-                </button>
-                <button className="flex flex-col items-center flex-shrink-0">
-                  <img
-                    src="\src\assets\salad.png"
-                    alt="Salad"
-                    class="w-10 h-10 mb-1"
-                  />
-                  <span className="text-sm text-gray-600 hover:text-yellow-500 hover-underline transition duration-300">
-                    Salad
-                  </span>
-                </button>
-                <button className="flex flex-col items-center flex-shrink-0">
-                  <img
-                    src="\src\assets\steak.png"
-                    alt="Steak"
-                    class="w-10 h-10 mb-1"
-                  />
-                  <span className="text-sm  text-gray-600 hover:text-yellow-500 hover-underline transition duration-300">
-                    Steak
-                  </span>
-                </button>
-                <button className="flex flex-col items-center flex-shrink-0">
-                  <img
-                    src="\src\assets\bread.png"
-                    alt="Bread"
-                    class="w-10 h-10 mb-1"
-                  />
-                  <span className="text-sm  text-gray-600 hover:text-yellow-500 hover-underline transition duration-300">
-                    Bread
-                  </span>
-                </button>
-                <button className="flex flex-col items-center flex-shrink-0">
-                  <img
-                    src="\src\assets\cookie.png"
-                    alt="Cookies"
-                    class="w-10 h-10 mb-1"
-                  />
-                  <span className="text-sm  text-gray-600 hover:text-yellow-500 hover-underline transition duration-300">
-                    Cookies
-                  </span>
-                </button>
-                <button className="flex flex-col items-center flex-shrink-0">
-                  <img
-                    src="\src\assets\drink.png"
-                    alt="Cookies"
-                    class="w-10 h-10 mb-1"
-                  />
-                  <span className="text-sm  text-gray-600 hover:text-yellow-500 hover-underline transition duration-300">
-                    Drink
-                  </span>
-                </button>
+                {kategori.map((kategori, index)=>{
+                    return <KategoriCard name={kategori.name}/>
+                }) 
+                }
               </div>
             </div>
   
