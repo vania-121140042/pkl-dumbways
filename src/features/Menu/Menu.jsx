@@ -5,12 +5,8 @@ import kategori from "../../assets/NamaKategori.json"
 
 const Menu = () => { 
     return (
-        <div className="min-h-screen flex flex-col items-center p-4">
-          <div className="w-full max-w-md">
-            <div className="flex justify-between items-center mb-4">
-              <div className="flex items-center space-x-2"></div>
-            </div>
-  
+        <div className="min-h-screen p-4">
+            
           {/*Navbar atas yang membuat logo, search, order dan hamburger menu */}
             <div className="flex justify-between items-center">
               <div className="flex items-center">
@@ -77,7 +73,7 @@ const Menu = () => {
             <div className="flex overflow-x-auto overflow-hidden no-scrollbar mt-8">
               <div className="flex flex-nowrap justify-between gap-5 w-full">
                 {kategori.map((kategori, index)=>{
-                    return <KategoriCard name={kategori.name}/>
+                    return <KategoriCard name={kategori.name} picture={kategori.picture}/>
                 }) 
                 }
               </div>
@@ -114,18 +110,18 @@ const Menu = () => {
             </div>
   
             <div className="grid grid-cols-2 gap-3 mt-4">
-            {products.map((product, index)=>{
-                return <ProductCard title={product.title} price={product.price}/>
+            {products.map((product, index, image)=>{
+                return <ProductCard title={product.title} price={product.price} image={product.image}/>
             }) 
             }
             </div>
 
             
   
-            <div className="bg-black rounded-lg p-2 flex flex-row justify-between items-center sticky bottom-2 left-4 right-4 mx-auto max-w-md">
+            <div className="bg-black rounded-lg p-2 flex flex-row justify-between items-center sticky bottom-2 left-0 right-0 mx-auto">
               <div className="pr-3">
                 <img
-                  src="/src/assets/shopping.png"
+                  src="/src/assets/bag.png"
                   alt="Bread"
                   className="w-8 h-8"
                 />
@@ -155,7 +151,6 @@ const Menu = () => {
               </button>
             </div>
           </div>
-        </div>
     );
   };
   export default Menu;
