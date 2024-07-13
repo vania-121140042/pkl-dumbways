@@ -40,7 +40,7 @@ const Login = () => {
             <input
               type="text"
               placeholder="Phone Number"
-              className="flex-1 p-2 rounded-r-md"
+              className="flex-1 p-2 rounded-r-md "
             />
           </div>
 
@@ -52,19 +52,19 @@ const Login = () => {
           </div>
 
           <div className="mt-4">
-              <div className="flex items-center">
-                <input type="checkbox" className="form-checkbox h-4 w-3 text-green-500" />
-                <span className="ml-2 text-sm text-gray-600">
-                  I agree to signup for the free membership program for active mobile number only
-                </span>
+              <div className="flex items-center mb-2">
+                <input type="checkbox" className="mt-1 form-checkbox h-4 w-3 bg-green-500 " />
+                <label for="checkbox1" className="ml-2 text-sm text-gray-600">
+                I agree to signup for the free membership program for active mobile number only
+                </label>
               </div>
 
               <div className="mt-4">
-                <div className="flex items-center ">
-                  <input type="checkbox" className="form-checkbox h-4 w-3 text-green-500" />
-                  <span className="m-2 text-sm text-gray-600">
-                    send me subways news, event, and exclusive offers
-                  </span>
+                <div className="flex items-center mb-2">
+                  <input type="checkbox" className="mt-1 form-checkbox h-4 w-3 bg-green-500" />
+                  <label for="checkbox1" className="ml-2 text-sm text-gray-600">
+                  send me subways news, event, and exclusive offers
+                  </label>
               </div>
             </div>
           </div>  
