@@ -1,8 +1,8 @@
-const KategoriCard = ({name}) => {
+const KategoriCard = ({name,picture}) => {
     return (
         <button className="flex flex-col items-center flex-shrink-0">
         <img
-          src="\src\assets\good.png"
+          src={picture}
           alt="For You"
           class="w-10 h-10 mb-1"
         />
