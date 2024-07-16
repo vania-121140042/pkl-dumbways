@@ -1,15 +1,12 @@
 import ProductCard from "./ProductCard";
-
-const products = [{title : "ayam", price : 10000}, {title : "sapi", price : 10000},{title : "burung", price : 10000}]
+import products from "../../assets/NamaMakanan.json"
+import KategoriCard from "./KategoriCard";
+import kategori from "../../assets/NamaKategori.json"
 
 const Menu = () => { 
     return (
-        <div className="min-h-screen flex flex-col items-center p-4">
-          <div className="w-full max-w-md">
-            <div className="flex justify-between items-center mb-4">
-              <div className="flex items-center space-x-2"></div>
-            </div>
-  
+        <div className="min-h-screen p-4">
+            
           {/*Navbar atas yang membuat logo, search, order dan hamburger menu */}
             <div className="flex justify-between items-center">
               <div className="flex items-center">
@@ -75,76 +72,10 @@ const Menu = () => {
             {/*Kategori Menu */}
             <div className="flex overflow-x-auto overflow-hidden no-scrollbar mt-8">
               <div className="flex flex-nowrap justify-between gap-5 w-full">
-                <button className="flex flex-col items-center flex-shrink-0">
-                  <img
-                    src="\src\assets\good.png"
-                    alt="For You"
-                    class="w-10 h-10 mb-1"
-                  />
-                  <span className="text-sm relative text-gray-600 hover:text-yellow-500 hover-underline transition duration-300">
-                    For You
-                  </span>
-                </button>
-                <button className="flex flex-col items-center flex-shrink-0">
-                  <img
-                    src="\src\assets\sandwich.png"
-                    alt="Sandwich"
-                    class="w-10 h-10 mb-1"
-                  />
-                  <span className="text-sm text-gray-600 hover:text-yellow-500 hover-underline transition duration-300">
-                    Sandwich
-                  </span>
-                </button>
-                <button className="flex flex-col items-center flex-shrink-0">
-                  <img
-                    src="\src\assets\salad.png"
-                    alt="Salad"
-                    class="w-10 h-10 mb-1"
-                  />
-                  <span className="text-sm text-gray-600 hover:text-yellow-500 hover-underline transition duration-300">
-                    Salad
-                  </span>
-                </button>
-                <button className="flex flex-col items-center flex-shrink-0">
-                  <img
-                    src="\src\assets\steak.png"
-                    alt="Steak"
-                    class="w-10 h-10 mb-1"
-                  />
-                  <span className="text-sm  text-gray-600 hover:text-yellow-500 hover-underline transition duration-300">
-                    Steak
-                  </span>
-                </button>
-                <button className="flex flex-col items-center flex-shrink-0">
-                  <img
-                    src="\src\assets\bread.png"
-                    alt="Bread"
-                    class="w-10 h-10 mb-1"
-                  />
-                  <span className="text-sm  text-gray-600 hover:text-yellow-500 hover-underline transition duration-300">
-                    Bread
-                  </span>
-                </button>
-                <button className="flex flex-col items-center flex-shrink-0">
-                  <img
-                    src="\src\assets\cookie.png"
-                    alt="Cookies"
-                    class="w-10 h-10 mb-1"
-                  />
-                  <span className="text-sm  text-gray-600 hover:text-yellow-500 hover-underline transition duration-300">
-                    Cookies
-                  </span>
-                </button>
-                <button className="flex flex-col items-center flex-shrink-0">
-                  <img
-                    src="\src\assets\drink.png"
-                    alt="Cookies"
-                    class="w-10 h-10 mb-1"
-                  />
-                  <span className="text-sm  text-gray-600 hover:text-yellow-500 hover-underline transition duration-300">
-                    Drink
-                  </span>
-                </button>
+                {kategori.map((kategori, index)=>{
+                    return <KategoriCard name={kategori.name} picture={kategori.picture}/>
+                }) 
+                }
               </div>
             </div>
   
@@ -179,18 +110,18 @@ const Menu = () => {
             </div>
   
             <div className="grid grid-cols-2 gap-3 mt-4">
-            {products.map((product, index)=>{
-                return <ProductCard title={product.title} price={product.price}/>
+            {products.map((product, index, image)=>{
+                return <ProductCard title={product.title} price={product.price} image={product.image}/>
             }) 
             }
             </div>
 
             
   
-            <div className="bg-black rounded-lg p-2 flex flex-row justify-between items-center sticky bottom-2 left-4 right-4 mx-auto max-w-md">
+            <div className="bg-black rounded-lg p-2 flex flex-row justify-between items-center sticky bottom-2 left-0 right-0 mx-auto">
               <div className="pr-3">
                 <img
-                  src="/src/assets/shopping.png"
+                  src="/src/assets/bag.png"
                   alt="Bread"
                   className="w-8 h-8"
                 />
@@ -220,7 +151,6 @@ const Menu = () => {
               </button>
             </div>
           </div>
-        </div>
     );
   };
   export default Menu;

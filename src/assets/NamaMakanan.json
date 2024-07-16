@@ -1,0 +1,38 @@
+[
+    {
+        "title" : "Sandwich Chicken Teriyaki Sauce Cheesee",
+        "price" : 175000,
+        "image" : "/src/assets/chickensandwich.jpg"
+    },
+    
+    {
+        "title" : "Maple Glazed Salmon Bliss",
+        "price" : 310000,
+        "image" : "/src/assets/salmon.jpg" 
+    },
+    
+    {
+        "title" : "Chocolate Chip Pancake Paradise",
+        "price" : 55000,
+        "image" : "/src/assets/pancake.jpg"
+    },
+    
+    {
+        "title" : "Watermelon Golden Margarita",
+        "price" : 75000,
+        "image" : "/src/assets/cocktail.jpg"
+    },
+
+    {
+        "title" : "Chocolate Chunk Delight",
+        "price" : 60000,
+        "image" : "/src/assets/cookies.jpg"
+    },
+
+    {
+        "title" : "Classic Spaghetti Bolognese",
+        "price" : 85000,
+        "image" : "/src/assets/spagetti.jpg"
+    }
+
+]

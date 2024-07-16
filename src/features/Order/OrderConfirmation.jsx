@@ -105,8 +105,9 @@ const OrderConfirmation = () => {
             </div>
           </div>
           
-          <button className="w-full bg-yellow-500 text-white p-2 rounded-md font-medium ">
-            <span className="mr-2">🛎️</span> Continue Browsing
+          <button className="w-full bg-yellow-500 text-white p-2 rounded-md font-medium flex gap-4 items-center justify-center">
+            <img className="w-6 h-6" src="\src\assets\bell.png"/>
+            <span className="mr-2">Continue Browsing</span>
           </button>
       </div>
   );

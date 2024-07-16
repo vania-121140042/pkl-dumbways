@@ -1,17 +1,12 @@
 
 const Login = () => {
     return (
-      <div className="min-h-screen bg-white flex flex-col items-center p-4">
-        <div className="w-full max-w-md">
-          <div className="flex justify-between items-center mb-4">
-            <div className="flex items-center space-x-2">
-            </div>
-          </div>
+      <div className="min-h-screen items-center p-4">
 
           <div className="text-center">
-            <p className="text-yellow-500 text-2xl leading-none font-pacifico">subways</p>
+            <p className="text-yellow-500 text-3xl font-bold leading-none font-pacifico">subways</p>
             <div className="mt-2">
-              <span className="block w-40 h-7 shadow-flat text-shadow bg-gray-200 rounded-full mx-auto"></span>
+              <img className="mx-auto" src="/src/assets/circle.png"/>
               <div className="relative flex items-center justify-center">
                 <div className="absolute top-0 flex justify-center items-center">
                 </div>
@@ -37,18 +32,19 @@ const Login = () => {
             className="w-full rounded-md"/>
           </div>
 
-          <div className="flex items-center border border-gray-300 rounded-md mb-4 mt-10">
+          <div className="flex items-center border border-gray-200 rounded-md mb-4 mt-10">
             <div className="bg-yellow-500 text-white p-2 rounded-l-md flex items-center">
-              <span className="mr-2">🇮🇩</span> +62
+              <img className="w-6 h-6 mr-2" src="/src/assets/indo.png" placeholder="indonesian flag"/>
+              <span className="mr-2 font-bold text-lg">+62</span>
             </div>
             <input
               type="text"
               placeholder="Phone Number"
-              className="flex-1 p-2 outline-none"
+              className="flex-1 p-2 rounded-r-md "
             />
           </div>
 
-          <button className="w-full bg-yellow-500 text-white p-2 rounded-md font-medium mt-10"> Lets Go </button>
+          <button className="w-full bg-yellow-500 hover:bg-black transition duration-300 ease-in-out text-white p-2 rounded-md font-medium mt-10"> Lets Go </button>
 
           <div className="text-center text-gray-500 text-xs mt-4">
             By clicking let’s go, you agree to all applicable{' '}
@@ -56,24 +52,23 @@ const Login = () => {
           </div>
 
           <div className="mt-4">
-              <div className="flex items-center">
-                <input type="checkbox" className="form-checkbox h-4 w-3 text-green-500" />
-                <span className="ml-2 text-sm text-gray-600">
-                  I agree to signup for the free membership program for active mobile number only
-                </span>
+              <div className="flex items-center mb-2">
+                <input type="checkbox" className="mt-1 form-checkbox h-4 w-3 bg-green-500 " />
+                <label for="checkbox1" className="ml-2 text-sm text-gray-600">
+                I agree to signup for the free membership program for active mobile number only
+                </label>
               </div>
 
               <div className="mt-4">
-                <div className="flex items-center ">
-                  <input type="checkbox" className="form-checkbox h-4 w-3 text-green-500" />
-                  <span className="m-2 text-sm text-gray-600">
-                    send me subways news, event, and exclusive offers
-                  </span>
+                <div className="flex items-center mb-2">
+                  <input type="checkbox" className="mt-1 form-checkbox h-4 w-3 bg-green-500" />
+                  <label for="checkbox1" className="ml-2 text-sm text-gray-600">
+                  send me subways news, event, and exclusive offers
+                  </label>
               </div>
             </div>
           </div>  
         </div>
-      </div>
     );
   };
   

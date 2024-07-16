@@ -13,10 +13,8 @@
     .text-shadow {
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     }
-    /* .colors {
-      color-scheme: rgba(255, 184, 0, 0.2);
-    } */
+
+    .boxShadow {
+      box-shadow: 0 -7px 8px rgba(0, 0, 0, 0.05);
   }
-
-
-
+}

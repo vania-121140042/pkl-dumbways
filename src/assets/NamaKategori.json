@@ -1,0 +1,41 @@
+[
+    {
+        "name"      : "For You",
+        "picture"   : "/src/assets/foryou.png"
+    },
+    
+    {
+        "name"      : "Sandwich",
+        "picture"   : "/src/assets/sandwich.png"
+    },
+    
+    {
+        "name"      : "Salad",
+        "picture"   : "/src/assets/salad.png"
+    },
+    
+    {
+        "name"      : "Steak",
+        "picture"   : "/src/assets/steak.png"
+    },
+
+    {
+        "name"      : "Bread",
+        "picture"   : "/src/assets/bread.png"
+    },
+
+    {
+        "name"      : "Cookies",
+        "picture"   : "/src/assets/cookie.png"
+    },
+
+    {
+        "name"      : "Drink",
+        "picture"   : "/src/assets/drink.png"
+    },
+
+    {
+        "name"      : "Dessert",
+        "picture"   : "/src/assets/dessert.png"
+    }
+]
