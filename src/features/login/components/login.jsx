@@ -1,5 +1,7 @@
+import { redirect, useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
     return (
       <div className="min-h-screen items-center p-4">
 
@@ -44,7 +46,9 @@ const Login = () => {
             />
           </div>
 
-          <button className="w-full bg-yellow-500 hover:bg-black transition duration-300 ease-in-out text-white p-2 rounded-md font-medium mt-10"> Lets Go </button>
+          <button onClick={()=>{
+            navigate("/menu");
+          }} className="w-full bg-yellow-500 hover:bg-black transition duration-300 ease-in-out text-white p-2 rounded-md font-medium mt-10"> Lets Go </button>
 
           <div className="text-center text-gray-500 text-xs mt-4">
             By clicking let’s go, you agree to all applicable{' '}
