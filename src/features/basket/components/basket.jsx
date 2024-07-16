@@ -23,7 +23,7 @@ const Basket = () => {
             </div>
             <div className="flex flex-row items-center justify-between">
               <button className="text-sm text-green-600">Edit</button>
-              <div>
+              <div className="">
                 <button className="w-8 h-8 text-gray-600 bg-gray-300 rounded-lg text-lg font-semibold">-</button>
                 <span className="mx-4 font-bold">1</span>
                 <button className="w-8 h-8 text-white bg-yellow-400 rounded-lg text-lg font-semibold">+</button>
@@ -33,11 +33,11 @@ const Basket = () => {
         </div>
       </div>
 
-        <div className="mt-6 p-4 w-[100%] h-[50%] bg-gray-100 rounded-t-3xl box-shadow absolute bottom-0">
-          <div className="divide-y divide-black">
+        <div className="mt-6 p-4 w-[100%] h-[50%] bg-white rounded-t-3xl boxShadow absolute bottom-0">
+          <div className="divide-y divide-black border-b">
             <h2 className="mb-3 text-lg font-semibold devide-y-2">Payment Details</h2>
           </div>
-          <div className="rounded-lg">
+          <div className="rounded-lg mt-2">
             <div className="flex justify-between mb-1">
               <span>Subtotal</span>
               <span>Rp 0</span>
@@ -55,8 +55,8 @@ const Basket = () => {
               <span>Rp 0</span>
             </div>
           </div>
-          <div className="px-4 py-4 space-y-5">
-            <button className="w-full px-4 py-2 text-white bg-yellow-500 rounded-lg">Submit Order</button>
+          <div className="px-4 py-4 space-y-5 absolute bottom-2 left-0 right-0 mx-auto">
+            <button className="w-full px-4 py-2 text-white bg-yellow-500  hover:bg-black transition duration-300 rounded-lg">Submit Order</button>
             <p className="mt-2 text-sm text-center text-red-600">Submitted order cannot be cancelled</p>
         </div>
         </div>
