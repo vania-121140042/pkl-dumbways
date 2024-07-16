@@ -52,7 +52,7 @@ const Login = () => {
           </div>
 
           <div className="mt-4">
-              <div className="flex items-center mb-2">
+              <div className="flex mb-2">
                 <input type="checkbox" className="mt-1 form-checkbox h-4 w-3 bg-green-500 " />
                 <label for="checkbox1" className="ml-2 text-sm text-gray-600">
                 I agree to signup for the free membership program for active mobile number only
@@ -60,7 +60,7 @@ const Login = () => {
               </div>
 
               <div className="mt-4">
-                <div className="flex items-center mb-2">
+                <div className="flex mb-2">
                   <input type="checkbox" className="mt-1 form-checkbox h-4 w-3 bg-green-500" />
                   <label for="checkbox1" className="ml-2 text-sm text-gray-600">
                   send me subways news, event, and exclusive offers

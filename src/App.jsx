@@ -11,7 +11,7 @@ function App() {
   const [count, setCount] = useState(0)
 
   async function getData() {
-    const url = "https://yummy-worlds-tickle.loca.lt/foods";
+    const url = "https://yummy-worlds-tickle.loca.lt/orders";
     try {
       const response = await fetch(url);
       if (!response.ok) {
@@ -30,8 +30,7 @@ function App() {
   }, [ ]);
 
   return (
-    
-      <Login />  
+      <Login /> 
   )
 }
 
