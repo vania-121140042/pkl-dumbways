@@ -14,7 +14,7 @@ import OrderConfirmation from './features/Order/OrderConfirmation.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>Hello world!</div>,
+    element: <div>pindah ke login yaa </div>,
   },
 
   {
