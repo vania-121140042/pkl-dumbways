@@ -1,10 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Basket = () => {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-white">
       <div className="flex items-center justify-between px-4 py-2 border-b">
-        <button>
+        <button onClick={()=>{
+            navigate("/menu");
+          }}>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
         </svg>
@@ -56,7 +60,9 @@ const Basket = () => {
             </div>
           </div>
           <div className="px-4 py-4 space-y-5 absolute bottom-2 left-0 right-0 mx-auto">
-            <button className="w-full px-4 py-2 text-white bg-yellow-500  hover:bg-black transition duration-300 rounded-lg">Submit Order</button>
+            <button onClick={()=>{
+            navigate("/confirmation");
+            }} className="w-full px-4 py-2 text-white bg-yellow-500  hover:bg-black transition duration-300 rounded-lg">Submit Order</button>
             <p className="mt-2 text-sm text-center text-red-600">Submitted order cannot be cancelled</p>
         </div>
         </div>

@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const OrderConfirmation = () => {
+  const navigate = useNavigate();
   return (
       <div className="min-h-screen bg-white m-4">
         <div className="flex items-center justify-center px-4 py-2 border-b p-4">
@@ -105,7 +107,10 @@ const OrderConfirmation = () => {
             </div>
           </div>
           
-          <button className="w-full bg-yellow-500 text-white p-2 rounded-md font-medium flex gap-4 items-center justify-center">
+          <button onClick={()=>{
+            navigate("/menu");
+          }}
+          className="w-full bg-yellow-500 text-white p-2 rounded-md font-medium flex gap-4 items-center justify-center">
             <img className="w-6 h-6" src="\src\assets\bell.png"/>
             <span className="mr-2">Continue Browsing</span>
           </button>

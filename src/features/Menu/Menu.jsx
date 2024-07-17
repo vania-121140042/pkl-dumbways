@@ -2,8 +2,10 @@ import ProductCard from "./ProductCard";
 import products from "../../assets/NamaMakanan.json"
 import KategoriCard from "./KategoriCard";
 import kategori from "../../assets/NamaKategori.json"
+import { useNavigate } from "react-router-dom";
 
 const Menu = () => { 
+  const navigate = useNavigate();
     return (
         <div className="min-h-screen p-4">
             
@@ -132,7 +134,9 @@ const Menu = () => {
                 </span>
                 <span className="text-white text-lg font-bold">1 item(s)</span>
               </div>
-              <button className="bg-yellow-500 p-2 rounded-md flex items-center">
+              <button onClick={()=>{
+            navigate("/order");
+            }} className="bg-yellow-500 p-2 rounded-md flex items-center">
                 <span className="text-white mr-2 text-lg font-bold">Rp 0</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
