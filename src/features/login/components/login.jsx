@@ -44,12 +44,15 @@ const Login = () => {
             />
           </div>
 
-          <button className="w-full bg-yellow-500 hover:bg-black transition duration-300 ease-in-out text-white p-2 rounded-md font-medium mt-10"> Lets Go </button>
+          <button className="w-full bg-yellow-500 hover:bg-black transition duration-300 ease-in-out text-white p-2 rounded-md font-medium mt-10">
+            Let's Go
+          </button>
 
           <div className="text-center text-gray-500 text-xs mt-4">
-            By clicking let’s go, you agree to all applicable{' '}
+          By clicking let’s go, you agree to all applicable {' '}
             <div className="text-yellow-500">Terms of Use and Privacy Policy</div>
           </div>
+
 
           <div className="mt-4">
               <div className="flex items-center mb-2">
