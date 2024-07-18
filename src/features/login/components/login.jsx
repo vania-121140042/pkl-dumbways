@@ -1,4 +1,4 @@
-import { redirect, useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -51,14 +51,15 @@ const Login = () => {
           }} className="w-full bg-yellow-500 hover:bg-black transition duration-300 ease-in-out text-white p-2 rounded-md font-medium mt-10"> Lets Go </button>
 
           <div className="text-center text-gray-500 text-xs mt-4">
-            By clicking let’s go, you agree to all applicable{' '}
+          By clicking let’s go, you agree to all applicable {' '}
             <div className="text-yellow-500">Terms of Use and Privacy Policy</div>
           </div>
+
 
           <div className="mt-4">
               <div className="flex mb-2">
                 <input type="checkbox" className="mt-1 form-checkbox h-4 w-3 bg-green-500 " />
-                <label for="checkbox1" className="ml-2 text-sm text-gray-600">
+                <label htmlFor="checkbox1" className="ml-2 text-sm text-gray-600">
                 I agree to signup for the free membership program for active mobile number only
                 </label>
               </div>
@@ -66,7 +67,7 @@ const Login = () => {
               <div className="mt-4">
                 <div className="flex mb-2">
                   <input type="checkbox" className="mt-1 form-checkbox h-4 w-3 bg-green-500" />
-                  <label for="checkbox1" className="ml-2 text-sm text-gray-600">
+                  <label htmlFor="checkbox1" className="ml-2 text-sm text-gray-600">
                   send me subways news, event, and exclusive offers
                   </label>
               </div>
