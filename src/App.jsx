@@ -5,13 +5,13 @@ import Login from './features/login/components/login'
 import OrderConfirmation from './features/Order/OrderConfirmation'
 import Basket from './features/basket/components/basket'
 import Menu from './features/Menu/Menu'
-
+import axios from 'axios'
 
 function App() {
   const [count, setCount] = useState(0)
 
   async function getData() {
-    const url = "https://yummy-worlds-tickle.loca.lt/orders";
+    const url = "https://twelve-mangos-mate.loca.lt/foods";
     try {
       const response = await fetch(url);
       if (!response.ok) {
@@ -35,3 +35,4 @@ function App() {
 }
 
 export default App
+

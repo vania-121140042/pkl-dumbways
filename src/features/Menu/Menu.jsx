@@ -3,8 +3,25 @@ import products from "../../assets/NamaMakanan.json"
 import KategoriCard from "./KategoriCard";
 import kategori from "../../assets/NamaKategori.json"
 import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const Menu = () => { 
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    console.log("JALAN GAK WOII!!")
+    axios.get('https://twelve-mangos-mate.loca.lt/foods')
+      .then(response => {
+        const data = response.data;
+        console.log(data);
+        setProducts(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching products:', error);
+      });
+  }, []);
+
   const navigate = useNavigate();
     return (
         <div className="min-h-screen p-4">
@@ -74,10 +91,10 @@ const Menu = () => {
             {/*Kategori Menu */}
             <div className="flex overflow-x-auto overflow-hidden no-scrollbar mt-8">
               <div className="flex flex-nowrap justify-between gap-5 w-full">
-                {kategori.map((kategori, index)=>{
+                 {kategori.map((kategori, index)=>{
                     return <KategoriCard name={kategori.name} picture={kategori.picture}/>
                 }) 
-                }
+                } 
               </div>
             </div>
   
@@ -112,14 +129,22 @@ const Menu = () => {
             </div>
   
             <div className="grid grid-cols-2 gap-3 mt-4">
-            {products.map((product, index, image)=>{
+            {/* {products.map((product, index, image)=>{
                 return <ProductCard title={product.title} price={product.price} image={product.image}/>
             }) 
+            } */}
+
+            {products.map(product => (
+              <ProductCard
+                key={product.id}
+                name={product.name}
+                price={product.price}
+                image={product.image}
+              />
+              ))
             }
             </div>
 
-            
-  
             <div className="bg-black rounded-lg p-2 flex flex-row justify-between items-center sticky bottom-2 left-0 right-0 mx-auto">
               <div className="pr-3">
                 <img
