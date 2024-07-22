@@ -8,10 +8,17 @@ import axios from "axios";
 
 const Menu = () => { 
   const [products, setProducts] = useState([]);
+  const [orderQuantity, setOrderQuantity] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  const handleAddItem = (price) => {
+    setOrderQuantity(orderQuantity + 1); 
+    setTotalPrice(totalPrice + price);
+  };
 
   useEffect(() => {
-    console.log("JALAN GAK WOII!!")
-    axios.get('https://twelve-mangos-mate.loca.lt/foods')
+    console.log("HALOO!!")
+    axios.get('https://loud-corners-suffer.loca.lt/foods')
       .then(response => {
         const data = response.data;
         console.log(data);
@@ -157,11 +164,12 @@ const Menu = () => {
                 <span className="text-white text-lg font-light">
                   Order Quantity
                 </span>
-                <span className="text-white text-lg font-bold">1 item(s)</span>
+                <span className="text-white text-lg font-bold">0 item(s)</span>
               </div>
+
               <button onClick={()=>{
-            navigate("/order");
-            }} className="bg-yellow-500 p-2 rounded-md flex items-center">
+                navigate("/order");
+                }} className="bg-yellow-500 p-2 rounded-md flex items-center">
                 <span className="text-white mr-2 text-lg font-bold">Rp 0</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

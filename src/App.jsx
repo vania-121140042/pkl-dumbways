@@ -11,27 +11,20 @@ function App() {
   // const [count, setCount] = useState(0)
 
   async function getData() {
-    const url = "https://twelve-mangos-mate.loca.lt/foods";
+    const url = "https://loud-corners-suffer.loca.lt/login";
     try {
       const response = await fetch(url);
       if (!response.ok) {
         throw new Error(`Response status: ${response.status}`);
       }
-  
-  //     const json = await response.json();
-  //     console.log(json);
-  //   } catch (error) {
-  //     console.error(error.message);
-  //   }
-  // }
+      } catch (error) {
+       console.error(error.message);
+    }
 
-  // // useEffect(() => {
-  // //     getData()
-  // // }, [ ]);
-
-  return (
+    return (
       <Login /> 
-  )
-}
+  );
+  };
+};
 
 export default App
