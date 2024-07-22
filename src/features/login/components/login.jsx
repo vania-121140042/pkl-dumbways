@@ -1,10 +1,10 @@
+import { useEffect, useRef } from "react";
 import { redirect, useNavigate } from "react-router-dom";
+import PhoneNumberInput from "../phonenumberinput";
 // import PhoneNumberInput from "../phonenumberinput";
 
 const Login = () => {
   const navigate = useNavigate();
-  // const handlePhoneNumberSubmit = () => {
-    navigate('/menu');
     return (
       <div className="min-h-screen items-center p-4">
 
@@ -37,6 +37,8 @@ const Login = () => {
             className="w-full rounded-md"/>
           </div>
 
+          <PhoneNumberInput />
+
           {/* <div className="flex items-center border border-gray-200 rounded-md mb-4 mt-10">
             <div>
             <PhoneNumberInput onPhoneNumberSubmit={handlePhoneNumberSubmit} />
@@ -46,8 +48,7 @@ const Login = () => {
             >
             Let's Go
         </button>
-      </div> */}
-
+      
           <div className="flex items-center border border-gray-200 rounded-md mb-4 mt-10">
             <div className="bg-yellow-500 text-white p-2 rounded-l-md flex items-center">
               <img className="w-6 h-6 mr-2" src="/src/assets/indo.png" placeholder="indonesian flag"/>
@@ -63,6 +64,7 @@ const Login = () => {
           <button onClick={()=>{
             navigate("/menu");
           }} className="w-full bg-yellow-500 hover:bg-black transition duration-300 ease-in-out text-white p-2 rounded-md font-medium mt-10"> Lets Go </button>
+          </div> */}
 
           <div className="text-center text-gray-500 text-xs mt-4">
           By clicking let’s go, you agree to all applicable {' '}

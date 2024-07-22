@@ -10,6 +10,8 @@ import Login from './features/login/components/login.jsx';
 import Menu from './features/Menu/Menu.jsx';
 import Basket from './features/basket/components/basket.jsx';
 import OrderConfirmation from './features/Order/OrderConfirmation.jsx';
+import ProductCard from './features/Menu/ProductCard.jsx';
+import PhoneNumberInput from './features/login/phonenumberinput.jsx';
 
 const router = createBrowserRouter([
   {
