@@ -1,12 +1,13 @@
-// import { useEffect, useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
+import { useEffect, useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
 import Login from "./features/login/components/login";
 import OrderConfirmation from "./features/Order/OrderConfirmation";
 import Basket from "./features/basket/components/basket";
 import Menu from "./features/Menu/Menu";
 import axios from "axios";
 import { api } from "./lib/api";
+import { createContext } from "react";
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -15,7 +16,7 @@ function App() {
     api
       .get("/foods")
       .then((response) => {
-        //
+        console.log("foods", response);
       })
       .catch((error) => {
         console.error(error);
@@ -30,9 +31,8 @@ function App() {
     // } catch (error) {
     //   console.error(error.message);
     // }
-
-    return <Login />;
   }
-}
 
+  return <Login />;
+}
 export default App;

@@ -3,10 +3,18 @@ import products from "../../assets/NamaMakanan.json";
 import KategoriCard from "./KategoriCard";
 import kategori from "../../assets/NamaKategori.json";
 import { useNavigate } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import React, {
+  useState,
+  useEffect,
+  useContext,
+  createContext,
+  Children,
+} from "react";
 import axios from "axios";
 import ButtonQuantity from "./ButtonQuantity";
 import { api } from "../../lib/api";
+import { useOrderContext } from "../../context/Context";
+// import { useOrderContext } from "../../context/context";
 
 const data = [
   {
@@ -20,27 +28,20 @@ const Menu = () => {
   // const [orderQuantity, setOrderQuantity] = useState(0);
   // const [totalPrice, setTotalPrice] = useState(0);
 
-  const [selectedProducts, setSelectedProducts] = useState([]);
+  // const [selectedProducts, setSelectedProducts] = useState([]);
+
+  const [{ selectedProducts }, dispatch] = useOrderContext();
+
+  // const orderCtx = useOrderContext();
+
+  // console.log({ orderCtx });
 
   const handleAddItem = (product) => {
-    const findProduct = selectedProducts.find(
-      (item) => item.product.id === product.id
-    );
-
-    // logic untuk nambah data pertama kali
-    if (!findProduct) {
-      setSelectedProducts((prev) => [...prev, { product, quantity: 1 }]);
-      return;
-    }
-
-    // logic untuk update data yg sudah ada
-
-    setSelectedProducts((prev) => {
-      return prev.map((item) => {
-        if (item.product.id !== product.id) return item;
-
-        return { ...item, quantity: item.quantity + 1 };
-      });
+    dispatch({
+      type: "addOrder",
+      payload: {
+        product,
+      },
     });
 
     // setOrderQuantity(orderQuantity + 1);
@@ -66,6 +67,7 @@ const Menu = () => {
   //     })
   //     .catch((error) => console.error("Error submitting phone number:", error));
   // };
+
   useEffect(() => {
     console.log("HALOO!!");
     api
