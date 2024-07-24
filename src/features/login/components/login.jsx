@@ -4,6 +4,7 @@ import PhoneNumberInput from "../phonenumberinput";
 import { Controller, useForm } from "react-hook-form";
 import axios from "axios";
 import { api } from "../../../lib/api";
+import { useOrderContext } from "../../../context/Context";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -18,6 +19,12 @@ const Login = () => {
         phoneNumber: value.phoneNumber,
       })
       .then((Response) => {
+        dispatch({
+          type: "addPhoneNumber",
+          payload: {
+            phoneNumber,
+          },
+        });
         console.log(Response);
         navigate("/Menu");
       })
@@ -28,7 +35,7 @@ const Login = () => {
     <div className="min-h-screen items-center p-4">
       <div className="text-center">
         <p className="text-yellow-500 text-3xl font-bold leading-none font-pacifico">
-          subways
+          AYAM KAMPUX
         </p>
         <div className="mt-2">
           <img className="mx-auto" src="/src/assets/circle.png" />
@@ -68,14 +75,14 @@ const Login = () => {
         />
 
         <button
-          className="w-full bg-yellow-500 hover:bg-black transition duration-300 ease-in-out text-white p-2 rounded-md font-medium mt-5"
+          className="w-full bg-yellow-500 hover:bg-yellow-600 transition duration-300 ease-in-out text-white p-3 rounded-md font-medium mt-5"
           type="submit"
         >
-          Lets Go
+          Let's Go
         </button>
 
         <div className="text-center text-gray-500 text-xs mt-4">
-          By clicking let’s go, you agree to all applicable{" "}
+          By clicking lets go, you agree to all applicable
           <div className="text-yellow-500">Terms of Use and Privacy Policy</div>
         </div>
 
