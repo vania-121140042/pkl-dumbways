@@ -14,11 +14,12 @@ import { OrderContextProvider } from "./context/Context.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <div className="grid place-items-center h-screen text-yellow-500 text-3xl font-bold">
-        AYAM KAMPUX{" "}
-      </div>
-    ),
+    element: <Login />,
+    // (
+    //   <div className="grid place-items-center h-screen text-yellow-500 text-3xl font-bold">
+    //     AYAM KAMPUX{" "}
+    //   </div>
+    // ),
   },
 
   {

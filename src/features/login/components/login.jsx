@@ -1,14 +1,15 @@
-import { useEffect, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { redirect, useNavigate } from "react-router-dom";
 import PhoneNumberInput from "../phonenumberinput";
 import { Controller, useForm } from "react-hook-form";
 import axios from "axios";
 import { api } from "../../../lib/api";
-import { useOrderContext } from "../../../context/Context";
+import OrderContext, { useOrderContext } from "../../../context/Context";
 
 const Login = () => {
   const navigate = useNavigate();
   const { handleSubmit, formState, control } = useForm();
+  const [state, dispatch] = useOrderContext();
 
   console.log(formState.errors);
 
@@ -18,14 +19,16 @@ const Login = () => {
       .post("/login", {
         phoneNumber: value.phoneNumber,
       })
-      .then((Response) => {
+      .then((response) => {
         dispatch({
-          type: "addPhoneNumber",
+          type: "addUser",
           payload: {
-            phoneNumber,
+            user: {
+              phoneNumber: response.data.phoneNumber,
+              id: response.data.id,
+            },
           },
         });
-        console.log(Response);
         navigate("/Menu");
       })
       .catch((error) => console.error("Error submitting phone number:", error));
@@ -76,7 +79,7 @@ const Login = () => {
 
         <button
           className="w-full bg-yellow-500 hover:bg-yellow-600 transition duration-300 ease-in-out text-white p-3 rounded-md font-medium mt-5"
-          type="submit"
+          type="submit "
         >
           Let's Go
         </button>

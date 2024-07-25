@@ -2,7 +2,7 @@ import { createContext, useContext, useReducer, useState } from "react";
 
 const initialState = {
   selectedProducts: [],
-  phoneNumber: "",
+  user: null,
 };
 
 const reducer = (state, action) => {
@@ -47,8 +47,14 @@ const reducer = (state, action) => {
       };
       break;
 
-    case "addPhoneNumber":
-      return { ...state, phoneNumber: action.payload.phoneNumber };
+    case "addUser":
+      return { ...state, user: action.payload.user };
+
+    case "resetOrder":
+      return {
+        ...state,
+        selectedProducts: [],
+      };
     default:
       break;
   }

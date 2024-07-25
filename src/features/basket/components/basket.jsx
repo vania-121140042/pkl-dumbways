@@ -5,14 +5,19 @@ import { api } from "../../../lib/api";
 
 const Basket = () => {
   const navigate = useNavigate();
-  const [{ selectedProducts }, dispatch] = useOrderContext();
+  const [{ selectedProducts, user }, dispatch] = useOrderContext();
   const totalPrice = selectedProducts.reduce((acc, curr) => {
     return acc + curr.product.price * curr.quantity;
   }, 0);
 
   const handleSubmit = async () => {
     try {
-      const data = await api.post("/order", selectedProducts);
+      const data = await api.post("/orders", {
+        userId: user.id,
+        items: selectedProducts.map((item) => {
+          return { foodId: item.product.id, quantity: item.quantity };
+        }),
+      });
       navigate(`/confirmation/${data.data.id}`);
     } catch (error) {
       console.log("err", error);
@@ -114,7 +119,7 @@ const Basket = () => {
             </div>
             <div className="flex justify-between font-bold">
               <span>Total Addition</span>
-              <span>Rp 0</span>
+              <span>Rp {totalPrice}</span>
             </div>
           </div>
           <div className="px-4 py-4 space-y-5 absolute bottom-2 left-0 right-0 mx-auto">
