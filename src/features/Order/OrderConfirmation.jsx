@@ -6,16 +6,21 @@ import { useOrderContext } from "../../context/Context";
 const OrderConfirmation = () => {
   const navigate = useNavigate();
   const [orderDetail, setOrderDetail] = useState();
-  const [{ phoneNumber }] = useOrderContext();
+  const [{ user }, dispatch] = useOrderContext();
 
   const { id } = useParams();
   console.log({ id });
 
-  // useEffect(() => {
-  //   api.get(`/order/${id}`).then((response) => {
-  //     setOrderDetail(response);
-  //   });
-  // }, []);
+  useEffect(() => {
+    api.get(`/orders/${id}`).then((response) => {
+      console.log(response);
+      setOrderDetail(response.data);
+    });
+  }, []);
+
+  console.log(orderDetail);
+
+  if (!orderDetail) return <p>Loading...</p>;
 
   return (
     <div className="min-h-screen bg-white m-4">
@@ -64,7 +69,7 @@ const OrderConfirmation = () => {
               <div className="text-center flex-1">
                 <span className="block text-black-500 font-bold">Order ID</span>
                 <span className="block text-black font-bold text-2xl">
-                  orderDetail.orderId
+                  {orderDetail.id}
                 </span>
               </div>
               <div className="h-10 border-l border-gray-300 mx-4"></div>
@@ -73,14 +78,14 @@ const OrderConfirmation = () => {
                   Queue Number
                 </span>
                 <span className="block text-black font-bold text-2xl">
-                  orderDetail.queueNumber
+                  {orderDetail.queueNumber}
                 </span>
               </div>
             </div>
           </div>
           <div className="flex justify-between mb-2">
             <span className="text-black-500 font-bold">Phone Number</span>
-            <span className="text-black font-medium">{phoneNumber}</span>
+            <span className="text-black font-medium">{user.phoneNumber}</span>
           </div>
           <div className="flex justify-between mb-2">
             <span className="text-black-500 font-bold ">Table</span>
@@ -92,7 +97,9 @@ const OrderConfirmation = () => {
           </div>
           <div className="flex justify-between mb-2">
             <span className="text-black-500 font-bold">Order Time</span>
-            <span className="text-black font-medium">2023-01-04 14:26:00</span>
+            <span className="text-black font-medium">
+              {orderDetail.createdAt}
+            </span>
           </div>
         </div>
       </div>
@@ -107,18 +114,26 @@ const OrderConfirmation = () => {
             <span className="text-black-500 flex-1 pl-10">Item</span>
             <span className="text-black-500 text-right">Price</span>
           </div>
-          <div className="flex justify-between mt-2">
-            <span className="text-black font-medium">1</span>
-            <span className="text-black font-medium flex-1 pl-16">
-              Ayam Dada Besar Voucher
-            </span>
-            <span className="text-black font-medium text-right">Rp 0</span>
-          </div>
+          {orderDetail.items.map((item) => {
+            return (
+              <div className="flex justify-between mt-2" key={item.id}>
+                <span className="text-black font-medium">{item.qty}</span>
+                <span className="text-black font-medium flex-1 pl-16">
+                  {item.food.name}
+                </span>
+                <span className="text-black font-medium text-right">
+                  Rp {item.food.price}
+                </span>
+              </div>
+            );
+          })}
         </div>
         <div className="border-t-2 border-dashed border-gray-200 ">
           <div className="flex justify-between bg-yellow-200 p-4">
             <span className="text-black font-semibold">Grand Total</span>
-            <span className="text-black font-medium">Rp 0</span>
+            <span className="text-black font-medium">
+              Rp {orderDetail.total}
+            </span>
           </div>
         </div>
       </div>
@@ -143,6 +158,9 @@ const OrderConfirmation = () => {
 
       <button
         onClick={() => {
+          dispatch({
+            type: "resetOrder",
+          });
           navigate("/menu");
         }}
         className="w-full bg-yellow-500 text-white p-2 rounded-md font-medium flex gap-4 items-center justify-center"
