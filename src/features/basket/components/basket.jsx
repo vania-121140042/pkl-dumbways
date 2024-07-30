@@ -58,7 +58,7 @@ const Basket = () => {
             const itemTotalPrice = item.quantity * item.product.price;
 
             return (
-              <div className="p-4 " key={item.product.id}>
+              <div className="p-4" key={item.product.id}>
                 <div className="flex flex-col justify-between mb-2">
                   <div className="flex flex-row justify-between items-center mb-2">
                     <span>{item.product.name}</span>
