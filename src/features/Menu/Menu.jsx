@@ -109,7 +109,7 @@ const Menu = () => {
             </svg>
           </div>
           <div className="text-yellow-500 font-bold text-2xl absolute left-1/2 transform -translate-x-1/2">
-            Ayam Goreng
+            Ayam Kampux
           </div>
         </div>
         <div class="flex items-center space-x-4">

@@ -49,7 +49,6 @@ const reducer = (state, action) => {
 
     case "addUser":
       return { ...state, user: action.payload.user };
-
     case "resetOrder":
       return {
         ...state,
